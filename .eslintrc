@@ -1,0 +1,31 @@
+    "rules": {
+
+        /* changed comma-dangle default...ironically,
+        we can't use a dangling comma here because
+        this is a JSON file. */
+        "comma-dangle": [
+        2,
+        "always-multiline"
+        ],
+
+        "quotes": [
+        0   
+        ],
+
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
