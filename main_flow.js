@@ -23,21 +23,29 @@ while (funds > 0 && funds < 100){
 	// place bets
 
 	const bets = { crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0 };
+	
 	let totalBet = rand(1, funds);
 	
-	funds = funds - totalBet;
-	
-	if (new Date().getDay() === 3){
+	switch (totalBet){
+		case 7:
+			totalBet = funds;
+			bets.heart = totalBet;
+			break;
+		case	13:
+			funds = funds -1;
+		case 11:
+			totalBet = 0;
+			break;
+		case 21:
+			totalBet = 21;
+			break;
+		default:
+			console.log("No superstition here!");
+			break;
+	}
 
-		totalBet = 1;
-
-	} else if (totalBet === 7) {
-		totalBet = funds;
-		bets.heart = totalBet;
-	} else {
-
-		console.log("No superstition here!");
 		let remaining = totalBet;
+		
 		do {
 			let bet = rand(1,remaining),
 				face = randFace();
@@ -45,8 +53,7 @@ while (funds > 0 && funds < 100){
 				remaining = remaining - bet;	
 		} while (remaining > 0);
 
-	}
-
+	funds = funds - totalBet;
 	console.log('\tbets: ' +
 	Object.keys(bets).map(face => `${face}: ${bets[face]} pence`).join(', ') +
 	` (total: ${totalBet} pence)`);
