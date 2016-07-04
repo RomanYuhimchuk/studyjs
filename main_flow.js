@@ -84,3 +84,12 @@ while (funds > 0 && funds < 100){
 };
 
 console.log(`\tending funs: ${funds}`);
+
+////////FUNCTIONS///////////////////////////////////////////////////
+
+
+function arrayHello(){
+	return ['hello', 'hello1','hello2'];
+};
+
+console.log(arrayHello());
